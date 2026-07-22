@@ -20,18 +20,49 @@
 </head>
 <body>
 
+<div class="announce-bar">
+  <div class="announce-track">
+    <div class="group">
+      <span>✦ Free Local Delivery on Orders $35+</span>
+      <span>✦ New Soap Scents Dropping Weekly</span>
+      <span>✦ 100% Handmade, Small-Batch</span>
+      <span>✦ Custom Tees Made to Order</span>
+    </div>
+    <div class="group" aria-hidden="true">
+      <span>✦ Free Local Delivery on Orders $35+</span>
+      <span>✦ New Soap Scents Dropping Weekly</span>
+      <span>✦ 100% Handmade, Small-Batch</span>
+      <span>✦ Custom Tees Made to Order</span>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="logo">✨ Glow by Gabby</a>
+    <a href="index.html" class="logo">
+      <span class="logo-mark">GG</span>
+      <span class="logo-word">Glow by Gabby<small>Handmade Goods Co.</small></span>
+    </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <button class="cart-btn" type="button" aria-label="View cart">
+        🛍️<span class="cart-badge">0</span>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="cart-panel">
+        <h4>Your Cart</h4>
+        <div class="cart-list"><p class="cart-empty">Your cart is empty.</p></div>
+        <div class="cart-subtotal"><span>Subtotal</span><span class="cart-subtotal-amt">$0.00</span></div>
+        <button type="button" class="btn cart-checkout">Checkout</button>
+      </div>
+    </div>
   </nav>
 </header>
 
@@ -102,9 +133,20 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="newsletter">
+      <h2>Get 10% Off Your First Order</h2>
+      <p>Join the list for new scent drops, tee designs, and pop-up market dates.</p>
+      <form id="newsletter-form">
+        <input type="email" placeholder="you@example.com" required aria-label="Email address">
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
     <div class="footer-grid">
       <div>
-        <div class="logo" style="margin-bottom:12px;">✨ Glow by Gabby</div>
+        <div class="logo" style="margin-bottom:14px;">
+          <span class="logo-mark">GG</span>
+          <span class="logo-word">Glow by Gabby<small>Handmade Goods Co.</small></span>
+        </div>
         <p>Handmade tees and small-batch soaps, made with love and delivered right to you. Mobile &amp; in-home service — no storefront needed.</p>
         <div class="social-row">
           <a href="#" aria-label="Instagram">IG</a>
@@ -128,7 +170,18 @@
           <li><a href="tel:5555551234">(555) 555-1234</a></li>
           <li>Serving the greater metro area</li>
         </ul>
+        <div class="payment-row">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">MASTERCARD</span>
+          <span class="payment-badge">PAYPAL</span>
+          <span class="payment-badge">APPLE PAY</span>
+        </div>
       </div>
+    </div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Refund Policy</a>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 Glow by Gabby. This is an example demo site — content &amp; contact info are placeholders.</p>
