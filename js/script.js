@@ -36,7 +36,7 @@
     var toggle = document.createElement('button');
     toggle.className = 'ts-toggle';
     toggle.type = 'button';
-    toggle.innerHTML = '🎨 Style';
+    toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 2-1 2-2 0-.6-.2-1-.5-1.4-.3-.4-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4c0-4.4-4-7.5-9-7.5Z"/><circle cx="7.5" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="8.5" r="1" fill="currentColor" stroke="none"/></svg> Style';
     toggle.setAttribute('aria-label', 'Preview a different site style');
 
     var panel = document.createElement('div');
@@ -176,6 +176,13 @@
     return Object.keys(cart).reduce(function (sum, id) { return sum + cart[id].qty * cart[id].price; }, 0);
   }
 
+  var TEE_MARK = '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35,9 C41,15 59,15 65,9 L83,9 L98,27 L83,41 L75,33 L75,93 Q75,97 71,97 L29,97 Q25,97 25,93 L25,33 L17,41 L2,27 L17,9 Z" fill="none" stroke="currentColor" stroke-width="5"/></svg>';
+  var SOAP_MARK = '<svg viewBox="0 0 100 100" aria-hidden="true"><rect x="14" y="34" width="72" height="52" rx="16" fill="none" stroke="currentColor" stroke-width="5"/><path d="M26,48 Q40,36 54,48 Q66,58 76,46" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>';
+
+  function productIcon(id) {
+    return id.indexOf('tee') === 0 ? TEE_MARK : SOAP_MARK;
+  }
+
   function renderCart() {
     var cart = getCart();
     var count = cartCount(cart);
@@ -201,7 +208,7 @@
           var row = document.createElement('div');
           row.className = 'cart-item';
           row.innerHTML =
-            '<div class="cart-item-media">🛍️</div>' +
+            '<div class="cart-item-media">' + productIcon(id) + '</div>' +
             '<div class="cart-item-info">' +
               '<div class="name"></div>' +
               '<div class="meta"></div>' +
@@ -236,7 +243,7 @@
 
     document.querySelectorAll('.cart-checkout').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        showToast("This is a demo store — checkout isn't connected to a real payment processor.");
+        showToast('Demo checkout — no payment processor is wired up here.');
       });
     });
 
@@ -278,7 +285,7 @@
     if (!form) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      showToast('Thanks for subscribing! (demo only — no email was sent)');
+      showToast("You're on the list! (Demo form — no email was actually sent.)");
       form.reset();
     });
   }
